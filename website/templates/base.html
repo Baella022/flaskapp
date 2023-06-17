@@ -19,7 +19,7 @@
       margin-bottom: 0;
       border-radius: 0;
       background: black;
-      text:white;
+      color: white;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     }
     
@@ -29,6 +29,21 @@
       flex-direction: column;
       min-height: 100vh; /* Set the minimum height of the body to 100% of the viewport height */
       background-color: #98FF98;
+      margin: 0; /* Remove default margin */
+      padding: 0; /* Remove default padding */
+    }
+
+    .container-fluid {
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-left: 2cm;
     }
 
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
@@ -46,10 +61,10 @@
     
     /* Set black background color, white text, and some padding */
     footer {
-      margin-top: auto; /* Push the footer to the bottom */
-      background-color:black;
+      background-color: black;
       color: white;
       padding: 15px;
+      margin-top: auto; /* Push the footer to the bottom */
     }
     
     /* On small screens, set height to 'auto' for sidenav and grid */
@@ -58,7 +73,22 @@
         height: auto;
         padding: 15px;
       }
-      .row.content {height:auto;} 
+      .row.content {height: auto;} 
+    }
+    
+    /* Adjust content padding for better readability */
+    .container-fluid {
+      padding: 20px;
+    }
+    
+    /* Adjust font sizes for better readability on smaller screens */
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 24px;
+    }
+    
+    /* Adjust margin between sections */
+    section {
+      margin-bottom: 30px;
     }
   </style>
 </head>
@@ -95,16 +125,16 @@
     <!-- Flash messages code -->
     {% for category, message in messages %} 
       {% if category == 'error' %}
-        <div class="alert alert-danger alter-dismissable fade show" role="alert">
+        <div class="alert alert-danger alert-dismissable fade in" role="alert">
           {{ message }}
-          <button type="button" class="close" data-dismiss="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
       {% else %}
-        <div class="alert alert-success alter-dismissable fade show" role="alert">
+        <div class="alert alert-success alert-dismissable fade in" role="alert">
           {{ message }}
-          <button type="button" class="close" data-dismiss="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
